@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistraPontoService", "RegistraPontoService\RegistraPontoService.csproj", "{BB6C8241-27E6-4A1D-BAAA-706856C608EB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{7AEF9211-8E43-40FD-9B83-D685854AD873}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB6C8241-27E6-4A1D-BAAA-706856C608EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6C8241-27E6-4A1D-BAAA-706856C608EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB6C8241-27E6-4A1D-BAAA-706856C608EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6C8241-27E6-4A1D-BAAA-706856C608EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AEF9211-8E43-40FD-9B83-D685854AD873}.Debug|Any CPU.ActiveCfg = Debug
+		{7AEF9211-8E43-40FD-9B83-D685854AD873}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF0A4159-57F2-40F6-872A-6596C3659311}
+	EndGlobalSection
+EndGlobal

@@ -34,10 +34,11 @@ namespace RegistraPontoService
             {
                 DateTime dt = DateTime.Now;
 
-                Registra();
+               // Registra();
 
                 if (dt.DayOfWeek != DayOfWeek.Friday || dt.DayOfWeek != DayOfWeek.Saturday || dt.DayOfWeek != DayOfWeek.Sunday)
                 {
+                    LogRegistraPonto("Verificação - Não é sexta nem Sabado e nem Domingo... " + DateTime.Now.ToString());
                     if (DateTime.Now.Hour == 7 && DateTime.Now.Minute == 0)
                     {
                         Registra();
@@ -52,6 +53,7 @@ namespace RegistraPontoService
 
                 if (dt.DayOfWeek == DayOfWeek.Friday)
                 {
+                    LogRegistraPonto("Verificação - é Sexta... " + DateTime.Now.ToString());
                     if (DateTime.Now.Hour == 7 && DateTime.Now.Minute == 0)
                     {
                         Registra();
@@ -89,31 +91,35 @@ namespace RegistraPontoService
                 LogRegistraPonto("Declara Chrome...");
                 options.AddArguments("--disable-notifications");
                 //options.AddArguments("--headless");
-                LogRegistraPonto("Arguments");
+            
                 IWebDriver driver = new ChromeDriver(@"C:\PCFCustom\Projetos\RegistraPontoService\RegistraPontoService", options);
                 LogRegistraPonto("Instanciando Chrome...");
+
                 driver.Manage().Window.Maximize();
-                LogRegistraPonto("Maximize");
-                Thread.Sleep(1000);
+                
                 driver.Navigate().GoToUrl("https://cliente.apdata.com.br/conecthus/index.html");
                 LogRegistraPonto("Navega na URL...");
-                Thread.Sleep(3000);
+                Thread.Sleep(15000);
 
                 IWebElement element = null;
 
-                element = driver.FindElement(By.Id("button-1017"));
+                element = driver.FindElement(By.Id("button-1017-btnEl"));
                 element.Click();
 
                 element = driver.FindElement(By.Id("ext-156"));
                 element.SendKeys("600855");
                 LogRegistraPonto("Matricula Inserida...");
+
                 element = driver.FindElement(By.Id("ext-158"));
                 element.SendKeys("P@ssw0rd");
                 LogRegistraPonto("Senha Inserida...");
-                //element = driver.FindElement(By.Id("ext160"));
-                //element.Click();
-                Thread.Sleep(5000);
+
+                element = driver.FindElement(By.Id("ext160"));
+                element.Click();
                 LogRegistraPonto("Clica Botão...");
+
+                driver.Quit();
+                SendMail.EnviaEmailResponsavel();
             }
             catch (Exception resultado)
             {               

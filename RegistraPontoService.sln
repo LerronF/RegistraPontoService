@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistraPontoService", "Reg
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{7AEF9211-8E43-40FD-9B83-D685854AD873}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registra.Test", "Registra.Test\Registra.Test.csproj", "{BFCFA974-D32F-4261-B02D-9DCF331DEAA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{BB6C8241-27E6-4A1D-BAAA-706856C608EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7AEF9211-8E43-40FD-9B83-D685854AD873}.Debug|Any CPU.ActiveCfg = Debug
 		{7AEF9211-8E43-40FD-9B83-D685854AD873}.Release|Any CPU.ActiveCfg = Release
+		{BFCFA974-D32F-4261-B02D-9DCF331DEAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFCFA974-D32F-4261-B02D-9DCF331DEAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFCFA974-D32F-4261-B02D-9DCF331DEAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFCFA974-D32F-4261-B02D-9DCF331DEAA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

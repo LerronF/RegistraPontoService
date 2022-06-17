@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Drawing.Imaging;
 using System.IO;
 using System.ServiceProcess;
 using System.Threading;
@@ -10,6 +11,7 @@ namespace RegistraPontoService
     public partial class Service1 : ServiceBase
     {
         Timer timer1;
+        DateTime dt = DateTime.Now;
 
         public Service1()
         {
@@ -19,56 +21,54 @@ namespace RegistraPontoService
         protected override void OnStart(string[] args)
         {
             timer1 = new Timer(new TimerCallback(timer1_Tick), null, 15000, 60000);
-            
-            LogRegistraPonto("Iniciando Serviço...");
+
+            LogRegistraPonto("#------------------------------ Iniciando Serviço ------------------------------#");
         }
 
         protected override void OnStop()
         {
-            LogRegistraPonto("Serviço parado...");
+            LogRegistraPonto("#------------------------------ Serviço Parado ------------------------------#");
         }
 
         private void timer1_Tick(object sender)
         {
             try
             {
-                DateTime dt = DateTime.Now;
+                // Registra();
+                LogRegistraPonto("###### Verificando dia da Semana ######");
 
-               // Registra();
-
-                if (dt.DayOfWeek != DayOfWeek.Friday || dt.DayOfWeek != DayOfWeek.Saturday || dt.DayOfWeek != DayOfWeek.Sunday)
+                if (dt.DayOfWeek == DayOfWeek.Monday)
                 {
-                    LogRegistraPonto("Verificação - Não é sexta nem Sabado e nem Domingo... " + DateTime.Now.ToString());
-                    if (DateTime.Now.Hour == 7 && DateTime.Now.Minute == 0)
-                    {
-                        Registra();
-                        LogRegistraPonto("Inicio Registrado");
-                    }
-                    else if (DateTime.Now.Hour == 17 && DateTime.Now.Minute == 0)
-                    {
-                        Registra();
-                        LogRegistraPonto("Final Registrado");
-                    }
+                    HorarioNormal();
                 }
-
-                if (dt.DayOfWeek == DayOfWeek.Friday)
+                else if (dt.DayOfWeek == DayOfWeek.Tuesday)
                 {
-                    LogRegistraPonto("Verificação - é Sexta... " + DateTime.Now.ToString());
-                    if (DateTime.Now.Hour == 7 && DateTime.Now.Minute == 0)
-                    {
-                        Registra();
-                        LogRegistraPonto("Inicio Registrado");
-                    }
-                    else if (DateTime.Now.Hour == 16 && DateTime.Now.Minute == 0)
-                    {
-                        Registra();
-                        LogRegistraPonto("Final Registrado");
-                    }
+                    HorarioNormal();
                 }
+                else if (dt.DayOfWeek == DayOfWeek.Wednesday)
+                {
+                    HorarioNormal();
+                }
+                else if (dt.DayOfWeek == DayOfWeek.Thursday)
+                {
+                    HorarioNormal();
+                }
+                else if (dt.DayOfWeek == DayOfWeek.Friday)
+                {
+                    HorarioReduzido();
+                }
+                else if (dt.DayOfWeek == DayOfWeek.Saturday)
+                {
+
+                }
+                else if (dt.DayOfWeek == DayOfWeek.Sunday)
+                {
+
+                }                
             }
             catch (Exception resultado)
             {
-                LogRegistraPonto("Erro ao iniciar registro");
+                LogRegistraPonto("*************************** Erro ao iniciar registro ***************************");
                 LogRegistraPonto(resultado.Message.Trim());
             }
 
@@ -86,20 +86,20 @@ namespace RegistraPontoService
         {
             try
             {
-                LogRegistraPonto("Iniciando Registro...");
+                LogRegistraPonto("#*--------------------------------------------- Iniciando Registro ---------------------------------------------*#");
                 ChromeOptions options = new ChromeOptions();
                 LogRegistraPonto("Declara Chrome...");
                 options.AddArguments("--disable-notifications");
                 //options.AddArguments("--headless");
-            
+
                 IWebDriver driver = new ChromeDriver(@"C:\PCFCustom\Projetos\RegistraPontoService\RegistraPontoService", options);
                 LogRegistraPonto("Instanciando Chrome...");
 
                 driver.Manage().Window.Maximize();
-                
+
                 driver.Navigate().GoToUrl("https://cliente.apdata.com.br/conecthus/index.html");
                 LogRegistraPonto("Navega na URL...");
-                Thread.Sleep(15000);
+                Thread.Sleep(20000);
 
                 IWebElement element = null;
 
@@ -113,18 +113,68 @@ namespace RegistraPontoService
                 element = driver.FindElement(By.Id("ext-158"));
                 element.SendKeys("P@ssw0rd");
                 LogRegistraPonto("Senha Inserida...");
-
-                element = driver.FindElement(By.Id("ext160"));
+                Thread.Sleep(5000);
+                element = driver.FindElement(By.CssSelector("#ext-160"));
                 element.Click();
-                LogRegistraPonto("Clica Botão...");
+                LogRegistraPonto("Clica no Botão de confirmação !!!");
+
+                Thread.Sleep(2000);
+                TakeScreenshot(driver);
 
                 driver.Quit();
                 SendMail.EnviaEmailResponsavel();
             }
             catch (Exception resultado)
-            {               
+            {
                 LogRegistraPonto("Erro ao Registrar Ponto");
                 LogRegistraPonto(resultado.Message.Trim());
+            }
+        }
+
+        public void HorarioNormal()
+        {
+            if (DateTime.Now.Hour == 7 && DateTime.Now.Minute == 0)
+            {
+                LogRegistro();
+            }
+            else if (DateTime.Now.Hour == 17 && DateTime.Now.Minute == 0)
+            {
+                LogRegistro();
+            }
+        }
+
+        public void HorarioReduzido()
+        {
+            if (DateTime.Now.Hour == 7 && DateTime.Now.Minute == 0)
+            {
+                LogRegistro();
+            }
+            else if (DateTime.Now.Hour == 16 && DateTime.Now.Minute == 0)
+            {
+                LogRegistro();
+            }
+        }
+
+        public void LogRegistro()
+        {
+            LogRegistraPonto("Verificação - Hoje é " + dt.DayOfWeek);
+
+            Registra();
+
+            LogRegistraPonto("#*--------------------------------------------- Registro realizado com sucesso !!! ---------------------------------------------*#");
+        }
+
+        public void TakeScreenshot(IWebDriver driver)
+        {
+            try
+            {
+                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                ss.SaveAsFile(@"C:\PCFCustom\Projetos\ScreenRegistro-"+ dt.DayOfWeek + ".png");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Mime;
 using System.Text;
 
 namespace RegistraPontoService
@@ -13,7 +14,7 @@ namespace RegistraPontoService
             {
                 StringBuilder body = new StringBuilder();
                 body.AppendLine("Prezado,");
-                body.AppendLine("Ponto Registrado com sucesso: " + DateTime.Now.ToString());
+                body.AppendLine("Ponto Registrado com sucesso em: " + DateTime.Now.ToString());
                 body.AppendLine("<hr>");
 
 
@@ -49,7 +50,7 @@ namespace RegistraPontoService
             sBody = sBody.Replace("\r\n", "\r");
             sBody = sBody.Replace("\n", "\r");
             sBody = sBody.Replace("\r", "<br>\r\n");
-            sBody = sBody.Replace("  ", "  ");
+            sBody = sBody.Replace("  ", "  ");            
 
             //if (requireTracker)
             //{
@@ -65,7 +66,7 @@ namespace RegistraPontoService
             {
                 Subject = subject,
                 Body = sBody,
-                IsBodyHtml = true
+                IsBodyHtml = true,
             })
             {
                 if (requireNotifications)
@@ -79,6 +80,16 @@ namespace RegistraPontoService
                     message.Headers.Add("Return-Receipt-To", senderMail);
                     message.Headers.Add("Disposition-Notification-To", senderMail);
                 }
+
+                DateTime dt = DateTime.Now;
+               
+                var contentID = "Image";
+                var inlineLogo = new Attachment(@"C:\PCFCustom\Projetos\ScreenRegistro-" + dt.DayOfWeek + ".png");
+                inlineLogo.ContentId = contentID;
+                inlineLogo.ContentDisposition.Inline = true;
+                inlineLogo.ContentDisposition.DispositionType = DispositionTypeNames.Inline;
+                message.Attachments.Add(inlineLogo);
+                message.Body += "<br /><br /><img src=\"cid:" + contentID + "\" height=\"500\" width=\"500\"><br />";
 
                 smtp.Send(message);
             }

@@ -102,7 +102,7 @@ namespace Registra.Test
                 element.Click();
                 LogRegistraPonto("Clica no Botão de confirmação !!!");
 
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
                 TakeScreenshot(driver);
 
                 driver.Quit();

@@ -35,7 +35,7 @@ namespace RegistraPontoService
             try
             {
                 // Registra();
-                LogRegistraPonto("###### Verificando dia da Semana ######");
+                // LogRegistraPonto("###### Verificando dia da Semana ######");
 
                 if (dt.DayOfWeek == DayOfWeek.Monday)
                 {

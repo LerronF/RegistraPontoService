@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistraPontoService.Infra.Data;
+using System;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Mime;
@@ -10,6 +11,8 @@ namespace RegistraPontoService
     {
         public static void EnviaEmailResponsavel()
         {
+            ServiceContext _PCFContext = LoadSettings.CarregaJson();
+
             StringBuilder body = new StringBuilder();
 
             try
@@ -21,17 +24,20 @@ namespace RegistraPontoService
 
                 //Send("smtp.devtime.net.br", 587, "admin=devtime.net.br", "devtime2022", body, "Plano de Ação", "admin@devtime.net.br", "Email Automático (Plano de Ação)", true, true, response.Request.eMailResponsavel);
 
-                Envia_com_anexo("smtp.office365.com", 587, "lerron.jesus@transire.com", "Tr@nsire2031", body, "Registra Ponto - Conecthus", "lerron.jesus@transire.com", "Email Automático (Bot)", true, true, "lerron.jesus@conecthus.org.br");
+                Envia_com_anexo(_PCFContext.Host, _PCFContext.Porta, _PCFContext.EmailEnvio, _PCFContext.SenhaEmail, body, "Registra Ponto - Conecthus", _PCFContext.EmailEnvio, "Email Automático (Bot)", true, true, _PCFContext.EmailRecebimento);
 
             }
             catch (Exception ex)
             {
+                Log.LogRegistraPonto(ex.Message);
+
                 body = new StringBuilder();
                 body.AppendLine("Prezado,");
                 body.AppendLine("Ponto Registrado com sucesso em: " + DateTime.Now.ToString());
                 body.AppendLine("<hr>");
 
-                Envia_sem_anexo("smtp.office365.com", 587, "lerron.jesus@transire.com", "Tr@nsire2031", body, "Registra Ponto - Conecthus", "lerron.jesus@transire.com", "Email Automático (Bot)", true, true, "lerron.jesus@conecthus.org.br");
+                Envia_com_anexo(_PCFContext.Host, _PCFContext.Porta, _PCFContext.EmailEnvio, _PCFContext.SenhaEmail, body, "Registra Ponto - Conecthus", _PCFContext.EmailEnvio, "Email Automático (Bot)", true, true, _PCFContext.EmailRecebimento);
+
             }
         }
 

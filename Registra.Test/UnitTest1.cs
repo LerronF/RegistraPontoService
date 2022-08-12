@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using RegistraPontoService;
+using RegistraPontoService.Infra.Data;
 using System;
 using System.IO;
 using System.Threading;
@@ -12,6 +13,7 @@ namespace Registra.Test
     public class UnitTest1
     {
         DateTime dt = DateTime.Now;
+        ServiceContext _PCFContext = LoadSettings.CarregaJson();
 
         [TestMethod]
         public void InicioProcesso()
@@ -70,19 +72,19 @@ namespace Registra.Test
         {
             try
             {
-                LogRegistraPonto("Iniciando Registro...");
+                Log.LogRegistraPonto("#********* Iniciando Registro *********#");
                 ChromeOptions options = new ChromeOptions();
-                LogRegistraPonto("Declara Chrome...");
+                Log.LogRegistraPonto("1 - Declara Chrome.");
                 options.AddArguments("--disable-notifications");
-                options.AddArguments("--headless");
+                //options.AddArguments("--headless");
 
                 IWebDriver driver = new ChromeDriver(@"C:\PCFCustom\Projetos\RegistraPontoService\RegistraPontoService", options);
-                LogRegistraPonto("Instanciando Chrome...");
+                Log.LogRegistraPonto("2 - Instanciando Chrome.");
 
                 driver.Manage().Window.Maximize();
 
                 driver.Navigate().GoToUrl("https://cliente.apdata.com.br/conecthus/index.html");
-                LogRegistraPonto("Navega na URL...");
+                Log.LogRegistraPonto("3 - Navega na URL.");
                 Thread.Sleep(20000);
 
                 IWebElement element = null;
@@ -92,17 +94,18 @@ namespace Registra.Test
 
                 element = driver.FindElement(By.Id("ext-156"));
                 element.SendKeys("600007");
-                LogRegistraPonto("Matricula Inserida...");
+                Log.LogRegistraPonto("4 - Matricula Inserida.");
 
                 element = driver.FindElement(By.Id("ext-158"));
-                element.SendKeys("P@ssw0rd");
-                LogRegistraPonto("Senha Inserida...");
+                element.SendKeys(_PCFContext.SenhaMatricula);
+                Log.LogRegistraPonto("5 - Senha Inserida.");
                 Thread.Sleep(5000);
                 element = driver.FindElement(By.CssSelector("#ext-160"));
                 element.Click();
-                LogRegistraPonto("Clica no Botão de confirmação !!!");
+                Log.LogRegistraPonto("6 - Clica no Botão de confirmação !!!");
+                Log.LogRegistraPonto("7 - Ponto Registrado com Sucesso !");
 
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 TakeScreenshot(driver);
 
                 driver.Quit();

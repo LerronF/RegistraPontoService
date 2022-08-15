@@ -40,7 +40,7 @@ namespace RegistraPontoService.Infra.Data
                             Porta = 587,
                             EmailEnvio = "lerron.jesus@transire.com",
                             EmailRecebimento = "lerron.jesus@conecthus.org.br",
-                            SenhaEmail = "Tr@nsire001pwd",
+                            SenhaEmail = "Tr@nsire003pwd",
                             IntervaloMiliSecond = 60000,
                             Matricula="600855",
                             SenhaMatricula= "P@ssw0rd",

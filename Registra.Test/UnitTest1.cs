@@ -78,12 +78,12 @@ namespace Registra.Test
                 options.AddArguments("--disable-notifications");
                 //options.AddArguments("--headless");
 
-                IWebDriver driver = new ChromeDriver(@"C:\PCFCustom\Projetos\RegistraPontoService\RegistraPontoService", options);
+                IWebDriver driver = new ChromeDriver(Directory.GetCurrentDirectory() , options);
                 Log.LogRegistraPonto("2 - Instanciando Chrome.");
 
                 driver.Manage().Window.Maximize();
 
-                driver.Navigate().GoToUrl("https://cliente.apdata.com.br/conecthus/index.html");
+                driver.Navigate().GoToUrl("https://cliente.apdata.com.br/tectoy/");
                 Log.LogRegistraPonto("3 - Navega na URL.");
                 Thread.Sleep(20000);
 

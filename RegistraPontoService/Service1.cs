@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using RegistraPontoService.Infra.Data;
 using System;
+using System.IO;
 using System.ServiceProcess;
 using System.Threading;
 
@@ -96,12 +97,12 @@ namespace RegistraPontoService
                 options.AddArguments("--disable-notifications");
                 //options.AddArguments("--headless");
 
-                IWebDriver driver = new ChromeDriver(@"C:\PCFCustom\Projetos\RegistraPontoService\RegistraPontoService", options);
+                IWebDriver driver = new ChromeDriver(@"D:\Projetos\RegistraPontoService\RegistraPontoService", options);
                 Log.LogRegistraPonto("2 - Instanciando Chrome.");
 
                 driver.Manage().Window.Maximize();
 
-                driver.Navigate().GoToUrl("https://cliente.apdata.com.br/conecthus/index.html");
+                driver.Navigate().GoToUrl("https://cliente.apdata.com.br/tectoy/");
                 Log.LogRegistraPonto("3 - Navega na URL.");
                 Thread.Sleep(20000);
 

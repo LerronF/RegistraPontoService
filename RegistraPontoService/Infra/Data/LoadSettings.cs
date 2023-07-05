@@ -38,12 +38,12 @@ namespace RegistraPontoService.Infra.Data
                         {
                             Host = "smtp.office365.com",
                             Porta = 587,
-                            EmailEnvio = "lerron.jesus@transire.com",
-                            EmailRecebimento = "lerron.jesus@conecthus.org.br",
-                            SenhaEmail = "Tr@nsire003pwd",
+                            EmailEnvio = "lerron.jesus@tectoy.com",
+                            EmailRecebimento = "lerron.jesus@tectoy.com",
+                            SenhaEmail = "Tectoy@2023",
                             IntervaloMiliSecond = 60000,
-                            Matricula="600855",
-                            SenhaMatricula= "P@ssw0rd",
+                            Matricula= "803875",
+                            SenhaMatricula= "123",
                             IsPrimary = true
                         });
                     }

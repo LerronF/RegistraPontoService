@@ -24,7 +24,7 @@ namespace RegistraPontoService
 
                 //Send("smtp.devtime.net.br", 587, "admin=devtime.net.br", "devtime2022", body, "Plano de Ação", "admin@devtime.net.br", "Email Automático (Plano de Ação)", true, true, response.Request.eMailResponsavel);
 
-                Envia_com_anexo(_PCFContext.Host, _PCFContext.Porta, _PCFContext.EmailEnvio, _PCFContext.SenhaEmail, body, "Registra Ponto - Conecthus", _PCFContext.EmailEnvio, "Email Automático (Bot)", true, true, _PCFContext.EmailRecebimento);
+                Envia_com_anexo(_PCFContext.Host, _PCFContext.Porta, _PCFContext.EmailEnvio, _PCFContext.SenhaEmail, body, "Registra Ponto - TecToy", _PCFContext.EmailEnvio, "Email Automático (Bot)", true, true, _PCFContext.EmailRecebimento);
 
             }
             catch (Exception ex)
@@ -36,7 +36,7 @@ namespace RegistraPontoService
                 body.AppendLine("Ponto Registrado com sucesso em: " + DateTime.Now.ToString());
                 body.AppendLine("<hr>");
 
-                Envia_com_anexo(_PCFContext.Host, _PCFContext.Porta, _PCFContext.EmailEnvio, _PCFContext.SenhaEmail, body, "Registra Ponto - Conecthus", _PCFContext.EmailEnvio, "Email Automático (Bot)", true, true, _PCFContext.EmailRecebimento);
+                Envia_com_anexo(_PCFContext.Host, _PCFContext.Porta, _PCFContext.EmailEnvio, _PCFContext.SenhaEmail, body, "Registra Ponto - TecToy", _PCFContext.EmailEnvio, "Email Automático (Bot)", true, true, _PCFContext.EmailRecebimento);
 
             }
         }

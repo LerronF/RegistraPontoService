@@ -124,7 +124,7 @@ namespace RegistraPontoService
                 Log.LogRegistraPonto("6 - Clica no Botão de confirmação !!!");
                 Log.LogRegistraPonto("7 - Ponto Registrado com Sucesso !");
 
-                Thread.Sleep(2000);
+                Thread.Sleep(4000);
                 TakeScreenshot(driver);
 
                 driver.Quit();

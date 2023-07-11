@@ -97,7 +97,7 @@ namespace RegistraPontoService
                 options.AddArguments("--disable-notifications");
                 //options.AddArguments("--headless");
 
-                IWebDriver driver = new ChromeDriver(@"D:\Projetos\RegistraPontoService\RegistraPontoService", options);
+                IWebDriver driver = new ChromeDriver(@"C:\PCFCustom\Projetos\RegistraPontoService\RegistraPontoService", options);
                 Log.LogRegistraPonto("2 - Instanciando Chrome.");
 
                 driver.Manage().Window.Maximize();

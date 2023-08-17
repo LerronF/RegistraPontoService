@@ -48,7 +48,7 @@ namespace RegistraPontoService
                 dt = DateTime.Now;
 
                 // Registra();
-                // Log.LogRegistraPonto("###### Verificando dia da Semana ######");
+                Log.LogRegistraPonto("###### Verificando dia da Semana e Horario "+ DateTime.Now.ToString() +"######");
 
                 if (dt.DayOfWeek == DayOfWeek.Monday)
                 {

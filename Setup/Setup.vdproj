@@ -70,13 +70,19 @@
         "Entry"
         {
         "MsmKey" = "8:_42CD73907558CCBE31CA1F637CBE4E3F"
-        "OwnerKey" = "8:_2B6819FDB1094B5BA8ED5D226FEACED0"
+        "OwnerKey" = "8:_EFC57998F44B3F4ECCA49B6AC4EEE788"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_42CD73907558CCBE31CA1F637CBE4E3F"
-        "OwnerKey" = "8:_EFC57998F44B3F4ECCA49B6AC4EEE788"
+        "OwnerKey" = "8:_2B6819FDB1094B5BA8ED5D226FEACED0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_476F6E69B4FE4F31932F4F9BBCB55044"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -154,13 +160,13 @@
         "Entry"
         {
         "MsmKey" = "8:_6D3D20376F47BBFD33A343B938C4DD89"
-        "OwnerKey" = "8:_2B6819FDB1094B5BA8ED5D226FEACED0"
+        "OwnerKey" = "8:_EFC57998F44B3F4ECCA49B6AC4EEE788"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_6D3D20376F47BBFD33A343B938C4DD89"
-        "OwnerKey" = "8:_EFC57998F44B3F4ECCA49B6AC4EEE788"
+        "OwnerKey" = "8:_2B6819FDB1094B5BA8ED5D226FEACED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -172,13 +178,13 @@
         "Entry"
         {
         "MsmKey" = "8:_719A0BF5281D8ACA6873988BB7450F26"
-        "OwnerKey" = "8:_2B6819FDB1094B5BA8ED5D226FEACED0"
+        "OwnerKey" = "8:_EFC57998F44B3F4ECCA49B6AC4EEE788"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_719A0BF5281D8ACA6873988BB7450F26"
-        "OwnerKey" = "8:_EFC57998F44B3F4ECCA49B6AC4EEE788"
+        "OwnerKey" = "8:_2B6819FDB1094B5BA8ED5D226FEACED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -196,13 +202,13 @@
         "Entry"
         {
         "MsmKey" = "8:_7F67BA63F6F492C27239E5C11369123A"
-        "OwnerKey" = "8:_2B6819FDB1094B5BA8ED5D226FEACED0"
+        "OwnerKey" = "8:_EFC57998F44B3F4ECCA49B6AC4EEE788"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_7F67BA63F6F492C27239E5C11369123A"
-        "OwnerKey" = "8:_EFC57998F44B3F4ECCA49B6AC4EEE788"
+        "OwnerKey" = "8:_2B6819FDB1094B5BA8ED5D226FEACED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -298,25 +304,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_413672FECD7D40509091100AC178AC77"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D1496BDF92A24765AA9C8CE310ACD299"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D502DC914CBF4363B386467DF78D1C86"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_60AA9C2E90474F078FFBB9067E4FFB4D"
+        "OwnerKey" = "8:_476F6E69B4FE4F31932F4F9BBCB55044"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -340,7 +328,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B984A08469FEEEB96BC03D3B852D02F8"
+        "OwnerKey" = "8:_D502DC914CBF4363B386467DF78D1C86"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D1496BDF92A24765AA9C8CE310ACD299"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_60AA9C2E90474F078FFBB9067E4FFB4D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_413672FECD7D40509091100AC178AC77"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -672,6 +678,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_476F6E69B4FE4F31932F4F9BBCB55044"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_476F6E69B4FE4F31932F4F9BBCB55044"
+                    {
+                    "Name" = "8:WebDriver.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\RegistraPontoService\\bin\\Debug\\WebDriver.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E560F9F00D0E4814A1EAE81E0409A5F2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_48D48DE917C45AC43D0E8A019ADE3791"
             {
             "AssemblyRegister" = "3:1"
@@ -927,11 +964,6 @@
             "AssemblyAsmDisplayName" = "8:System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B984A08469FEEEB96BC03D3B852D02F8"
-                    {
-                    "Name" = "8:System.ValueTuple.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.ValueTuple.dll"
             "TargetName" = "8:"
@@ -1162,15 +1194,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Registra Ponto - Victum"
-        "ProductCode" = "8:{23675470-FF49-4BE1-98AA-835E89C2DDB4}"
-        "PackageCode" = "8:{60D3F8F6-AC3D-45B3-B667-810F22E38622}"
+        "ProductCode" = "8:{AAB36EBE-1E6A-41CE-8C84-73B13D60A8F8}"
+        "PackageCode" = "8:{775F3C5F-E395-4A9B-A689-98CC30C0EAC5}"
         "UpgradeCode" = "8:{5215E607-FDAE-486E-B9CB-D32A6F6167DC}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:3.0.8"
+        "ProductVersion" = "8:3.0.9"
         "Manufacturer" = "8:Victum"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

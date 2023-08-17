@@ -11,7 +11,7 @@ namespace RegistraPontoService
     {
         public static void LogRegistraPonto(string descricao)
         {
-            StreamWriter vWriter = new StreamWriter(@"C:\PCFCustom\Projetos\RegistraPonto.txt", true);
+            StreamWriter vWriter = new StreamWriter(@"C:\PCFCustom\Projetos\"+ DateTime.Now.ToString("ddMMyyyy") +"-RegistraPonto.txt", true);
             vWriter.WriteLine(descricao + " : " + DateTime.Now.ToString());
             vWriter.Flush();
             vWriter.Close();

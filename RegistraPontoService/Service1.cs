@@ -53,22 +53,27 @@ namespace RegistraPontoService
                 if (dt.DayOfWeek == DayOfWeek.Monday)
                 {
                     HorarioNormal();
+                    Horario_Intervalo_Almoco();
                 }
                 else if (dt.DayOfWeek == DayOfWeek.Tuesday)
                 {
                     HorarioNormal();
+                    Horario_Intervalo_Almoco();
                 }
                 else if (dt.DayOfWeek == DayOfWeek.Wednesday)
                 {
                     HorarioNormal();
+                    Horario_Intervalo_Almoco();
                 }
                 else if (dt.DayOfWeek == DayOfWeek.Thursday)
                 {
                     HorarioNormal();
+                    Horario_Intervalo_Almoco();
                 }
                 else if (dt.DayOfWeek == DayOfWeek.Friday)
                 {
                     HorarioReduzido();
+                    Horario_Intervalo_Almoco();
                 }
                 else if (dt.DayOfWeek == DayOfWeek.Saturday)
                 {
@@ -139,11 +144,11 @@ namespace RegistraPontoService
 
         public void HorarioNormal()
         {
-            if (DateTime.Now.Hour == 7 && DateTime.Now.Minute == 0)
+            if (DateTime.Now.Hour == _PCFContext.Hora_Entrada && DateTime.Now.Minute == _PCFContext.Minuto_Entrada)
             {
                 LogRegistro();
             }
-            else if (DateTime.Now.Hour == 17 && DateTime.Now.Minute == 0)
+            else if (DateTime.Now.Hour == _PCFContext.Hora_Saida && DateTime.Now.Minute == _PCFContext.Minuto_Saida)
             {
                 LogRegistro();
             }
@@ -151,11 +156,23 @@ namespace RegistraPontoService
 
         public void HorarioReduzido()
         {
-            if (DateTime.Now.Hour == 7 && DateTime.Now.Minute == 0)
+            if (DateTime.Now.Hour == _PCFContext.Hora_Entrada && DateTime.Now.Minute == _PCFContext.Minuto_Entrada)
             {
                 LogRegistro();
             }
-            else if (DateTime.Now.Hour == 16 && DateTime.Now.Minute == 0)
+            else if (DateTime.Now.Hour == _PCFContext.Hora_Saida_Reduzido && DateTime.Now.Minute == _PCFContext.Minuto_Saida_Reduzido)
+            {
+                LogRegistro();
+            }
+        }
+
+        public void Horario_Intervalo_Almoco()
+        {
+            if (DateTime.Now.Hour == _PCFContext.Hora_Intervalo_Saida && DateTime.Now.Minute == _PCFContext.Minuto_Intervalo_Saida)
+            {
+                LogRegistro();
+            }
+            else if (DateTime.Now.Hour == _PCFContext.Hora_Intervalo_Entrada && DateTime.Now.Minute == _PCFContext.Minuto_Intervalo_Entrada)
             {
                 LogRegistro();
             }

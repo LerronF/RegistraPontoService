@@ -40,8 +40,8 @@ namespace RegistraPontoService
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.Description = "Registra Ponto Conecthus";
-            this.serviceInstaller1.ServiceName = "Registra Ponto - Conecthus";
+            this.serviceInstaller1.Description = "Registra Ponto Victum";
+            this.serviceInstaller1.ServiceName = "Registra Ponto - Victum";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             this.serviceInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller1_AfterInstall);
             // 

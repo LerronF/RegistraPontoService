@@ -13,7 +13,7 @@ namespace RegistraPontoService.Infra.Data
             ServiceContext Context;
             AppSettings LocalSettings;
             AppParameters primaryParameters;
-            string arqConexao;
+            //string arqConexao;
 
             try
             {
@@ -40,11 +40,21 @@ namespace RegistraPontoService.Infra.Data
                             Porta = 587,
                             EmailEnvio = "lerron.jesus@tectoy.com",
                             EmailRecebimento = "lerron.jesus@tectoy.com",
-                            SenhaEmail = "Tectoy@2023",
+                            SenhaEmail = "xxxxxxxxxxxx",
                             IntervaloMiliSecond = 60000,
-                            Matricula= "803875",
-                            SenhaMatricula= "123",
-                            IsPrimary = true
+                            Matricula= "xxxxxxx",
+                            SenhaMatricula= "xxxxxxxx",
+                            IsPrimary = true,
+                            Hora_Entrada = 7,
+                            Minuto_Entrada = 0,
+                            Hora_Intervalo_Saida=11,
+                            Minuto_Intervalo_Saida=30,
+                            Hora_Intervalo_Entrada=12,
+                            Minuto_Intervalo_Entrada=30,
+                            Hora_Saida=17,
+                            Minuto_Saida=0,
+                            Hora_Saida_Reduzido = 16,
+                            Minuto_Saida_Reduzido = 0
                         });
                     }
 
@@ -64,11 +74,21 @@ namespace RegistraPontoService.Infra.Data
                         Porta = 587,
                         EmailEnvio = "lerron.jesus@transire.com",
                         EmailRecebimento = "lerron.jesus@conecthus.org.br",
-                        SenhaEmail = "Tr@nsire001pwd",
+                        SenhaEmail = "xxxxxxxxxxxxxxx",
                         IntervaloMiliSecond = 60000,
                         Matricula = "600855",
-                        SenhaMatricula = "P@ssw0rd",
-                        IsPrimary = true
+                        SenhaMatricula = "P@xxxxxx",
+                        IsPrimary = true,
+                        Hora_Entrada = 7,
+                        Minuto_Entrada = 0,
+                        Hora_Intervalo_Saida = 11,
+                        Minuto_Intervalo_Saida = 30,
+                        Hora_Intervalo_Entrada = 12,
+                        Minuto_Intervalo_Entrada = 30,
+                        Hora_Saida = 17,
+                        Minuto_Saida = 0,
+                        Hora_Saida_Reduzido = 16,
+                        Minuto_Saida_Reduzido = 0
                     });
 
                     var options = new JsonSerializerOptions { WriteIndented = true };

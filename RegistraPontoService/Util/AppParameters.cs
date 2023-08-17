@@ -12,6 +12,16 @@
         public int IntervaloMiliSecond { get; set; }
         public string Matricula { get; set; }
         public string SenhaMatricula { get; set; }
+        public int Hora_Entrada { get; set; }
+        public int Minuto_Entrada { get; set; }
+        public int Hora_Intervalo_Saida { get; set; }
+        public int Minuto_Intervalo_Saida { get; set; }
+        public int Hora_Intervalo_Entrada { get; set; }
+        public int Minuto_Intervalo_Entrada { get; set; }
+        public int Hora_Saida { get; set; }
+        public int Minuto_Saida { get; set; }
+        public int Hora_Saida_Reduzido { get; set; }
+        public int Minuto_Saida_Reduzido { get; set; }
         public System.DateTime LastUpdate { get; set; }
     }
 }
